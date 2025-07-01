@@ -288,5 +288,9 @@ def download():
         mimetype='text/plain'
     )
 
+@app.route('/<path:path>', methods=['GET', 'POST'])
+def catch_all(path):
+    return index()
+
 if __name__ == '__main__':
     app.run(debug=True) 
